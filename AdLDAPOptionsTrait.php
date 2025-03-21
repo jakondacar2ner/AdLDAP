@@ -24,30 +24,29 @@ trait AdLDAPOptionsTrait
 {
 
     /**
-     * Array of domain controllers
-     * Can`t be empty
+     * Массив контроллеров домена
+     * Не может быть пустым
      *
      * @var array
      */
     protected array $domain_controllers = [];
 
     /**
-     * Port used to talk to the domain controllers
+     * Порт для подключения к контроллеру домена
      *
      * @var int
      */
     protected int $port = ConnectionInterface::PORT;
 
     /**
-     * The base dn for your domain
-     * If this is set to null then adLDAP1 will attempt to obtain this automatically from the rootDSE
+     * BaseDN
      *
      * @var string
      */
     protected ?string $base_dn = null;
 
     /**
-     * Domain account for searching
+     * Аккаунт для просмотра Ldap каталога, в случае если запрещено анонимное подключение
      *
      * @var string
      * @var string
@@ -56,7 +55,7 @@ trait AdLDAPOptionsTrait
     protected ?string $bind_pw = null;
 
     /**
-     * Optional domain account with higher privileges
+     * Опционально. Административная учетная запись
      *
      * @var string
      * @var string
@@ -65,7 +64,7 @@ trait AdLDAPOptionsTrait
     protected ?string $admin_password = null;
 
     /**
-     * The account suffix for your domain
+     * Суффикс домена
      *
      * @var string
      */
@@ -87,16 +86,13 @@ trait AdLDAPOptionsTrait
 
     /**
      * Use SSO
-     * To indicate to adLDAP1 to reuse password set by the browser through NTLM or Kerberos
      *
      * @var bool
      */
     protected bool $use_sso = false;
 
     /**
-     * When querying group memberships, do it recursively
-     * eg. User Fred is a member of Group A, which is a member of Group B, which is a member of Group C
-     * user_ingroup("Fred","C") will returns true with this option turned on, false if turned off
+     * Рекурсивный просмотр членства в группах
      *
      * @var bool
      */
