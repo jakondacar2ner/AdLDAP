@@ -77,43 +77,6 @@ class AdLDAP extends ConnectionAbstract
         $this->bound = true;
     }
 
-//        $this->bound = @ldap_bind($this->connection, $this->options->bind_dn, $this->options->bind_pw);
-//        if (!$this->bound) {
-//            throw new RuntimeException("Bind failed: " . $this->getLastError());
-//        }
-//
-//        $this->options->base_dn ??= $this->findBaseDN();
-//        $this->options->account_suffix ?: $this->setAccountSuffix();
-
-//    public function connect(): void
-//    {
-//        if ($this->connection) {
-//            return;
-//        }
-//
-//        foreach ($this->config['options'] as $name => $value) {
-//            if (\in_array(ConnectionOptions::getOption($name), self::PRECONNECT_OPTIONS, true)) {
-//                $this->setOption($name, $value);
-//            }
-//        }
-//
-//        if (false === $connection = ldap_connect($this->config['connection_string'])) {
-//            throw new LdapException('Invalid connection string: '.$this->config['connection_string']);
-//        }
-//
-//        $this->connection = $connection;
-//
-//        foreach ($this->config['options'] as $name => $value) {
-//            if (!\in_array(ConnectionOptions::getOption($name), self::PRECONNECT_OPTIONS, true)) {
-//                $this->setOption($name, $value);
-//            }
-//        }
-//
-//        if ('tls' === $this->config['encryption'] && false === @ldap_start_tls($this->connection)) {
-//            throw new LdapException('Could not initiate TLS connection: '.ldap_error($this->connection));
-//        }
-//    }
-
     /**
      * Get the bind status
      *
