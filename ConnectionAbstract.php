@@ -23,7 +23,6 @@ abstract class ConnectionAbstract implements ConnectionInterface
     public function __construct(AdLDAPOptions|AdLDAPSettingsInterface $options = new AdLDAPOptions)
     {
         $this->setOptions($options);
-
     }
 
     /**
