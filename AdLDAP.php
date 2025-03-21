@@ -86,16 +86,6 @@ class AdLDAP extends ConnectionAbstract
         return $this->bound;
     }
 
-    private function disconnect(): void
-    {
-        if ($this->connection) {
-            ldap_unbind($this->connection);
-        }
-
-        $this->connection = null;
-        $this->bound = false;
-    }
-
     /**
      * Closes the LDAP connection
      *
@@ -118,6 +108,16 @@ class AdLDAP extends ConnectionAbstract
         return $this->connection;
     }
 
+    private function disconnect(): void
+    {
+        if ($this->connection) {
+            ldap_unbind($this->connection);
+        }
+
+        $this->connection = null;
+        $this->bound = false;
+    }
+    
     /**
      * Get the RootDSE properties from a domain controller
      *
